@@ -1,0 +1,17 @@
+[Unit]
+Description=Bot Noticias Chile
+After=multi-user.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=pi
+WorkingDirectory=/home/pi/mastodon_rss_bot
+ExecStart=/home/pi/mastodon_rss_bot/run.sh
+
+[Install]
+WantedBy=multi-user.target
+
+#paste in /etc/systemd/system/ and then activate using sudo systemctl enable newsbot.service
